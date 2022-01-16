@@ -1,6 +1,6 @@
 import random
 
-
+#code from code instute battleship demo
 class PlayerGrid:
     """
     Player Grid class that holds information on the player,
@@ -11,9 +11,10 @@ class PlayerGrid:
         self.player_side = player_side
         self.player_ships = player_ships
 
+    #code from you tube video by PyProTricks
     def create_pgrid(self):
         """
-        Creates a grid for the player
+        Creates a grid for the player made of os
         """
         symbol = "o"
         for i in range(gsize):
@@ -21,7 +22,7 @@ class PlayerGrid:
                 print(symbol, end=" ")
             print()
 
-
+#code from code instute battleship demo
 class ComputerGrid:
     """
     Computer Grid class that holds information on the player,
@@ -32,9 +33,10 @@ class ComputerGrid:
         self.computer_side = computer_side
         self.computer_ships = computer_ships
 
+    #code from you tube video by PyProTricks
     def create_cgrid(self):
         """
-        Creates a grid for the computer
+        Creates a grid for the computer made of os
         """
         symbol = "o"
         for i in range(gsize):
