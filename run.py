@@ -11,15 +11,16 @@ class PlayerGrid:
         self.player_side = player_side
         self.player_ships = player_ships
 
-    
-    def create_grid(self):
+    def create_pgrid(self):
+        """
+        Creates a grid for the player
+        """
         symbol = "o"
-
         for i in range(gsize):
             for j in range(gsize):
                 print(symbol, end=" ")
             print()
-    
+
 
 class ComputerGrid:
     """
@@ -30,7 +31,17 @@ class ComputerGrid:
         self.computer = computer
         self.computer_side = computer_side
         self.computer_ships = computer_ships
-   
+
+    def create_cgrid(self):
+        """
+        Creates a grid for the computer
+        """
+        symbol = "o"
+        for i in range(gsize):
+            for j in range(gsize):
+                print(symbol, end=" ")
+            print()
+
 
 def welcome():
     """
@@ -46,11 +57,36 @@ def welcome():
 
 
 def grids_size():
-    return int(input("What size grid"))
+    """
+    Gets the user input for the grid size
+    """
 
+    while True:
+        
+        try:
+            x = int(input("What size grid? Needs to be betwween 4 and 6"))
+            if x == 4 or x == 5 or x == 6:
+                return x         
+        except ValueError:
+            print("needs to be between 4 and 6")
+        except Exception:
+            print("needs to be between 4 and 6")
+                  
+    
+
+
+
+            
 
 welcome()
 gsize = grids_size()
 
-pgrid = PlayerGrid("player", gsize, "player ships" )
-pgrid.create_grid()
+
+
+pgrid = PlayerGrid("Player's Grid:", gsize, "player ships")
+print(pgrid.player)
+pgrid.create_pgrid()
+print("-" * 20)
+cgrid = ComputerGrid("Computer's Grid:", gsize, "player ships")
+print(cgrid.computer)
+cgrid.create_cgrid()
