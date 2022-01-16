@@ -59,28 +59,23 @@ def welcome():
 def grids_size():
     """
     Gets the user input for the grid size
+    and validates it if its a number between 4 and 6
     """
-
     while True:
-        
+        x = input("What size grid? Needs to be between 4 and 6\n")
         try:
-            x = int(input("What size grid? Needs to be betwween 4 and 6"))
-            if x == 4 or x == 5 or x == 6:
-                return x         
+            if int(x) == 4 or int(x) == 5 or int(x) == 6:
+                return int(x)
         except ValueError:
-            print("needs to be between 4 and 6")
+            print("Needs to be a number between 4 and 6")
         except Exception:
-            print("needs to be between 4 and 6")
-                  
-    
+            print("Needs to be a number between 4 and 6")
+        else:
+            print("Needs to be a number between 4 and 6")
 
-
-
-            
 
 welcome()
 gsize = grids_size()
-
 
 
 pgrid = PlayerGrid("Player's Grid:", gsize, "player ships")
