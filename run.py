@@ -11,6 +11,15 @@ class PlayerGrid:
         self.player_side = player_side
         self.player_ships = player_ships
 
+    
+    def create_grid(self):
+        symbol = "o"
+
+        for i in range(gsize):
+            for j in range(gsize):
+                print(symbol, end=" ")
+            print()
+    
 
 class ComputerGrid:
     """
@@ -21,9 +30,13 @@ class ComputerGrid:
         self.computer = computer
         self.computer_side = computer_side
         self.computer_ships = computer_ships
-
+   
 
 def welcome():
+    """
+    Function that prints a group of strings that will
+    appear before anything else
+    """
     print("Welcome to Awesome Battleships!")
     print("Player and Computer Board size: 5")
     print("Number of ships: 4")
@@ -32,4 +45,12 @@ def welcome():
     print("Column: 0")
 
 
+def grids_size():
+    return int(input("What size grid"))
+
+
 welcome()
+gsize = grids_size()
+
+pgrid = PlayerGrid("player", gsize, "player ships" )
+pgrid.create_grid()
