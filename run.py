@@ -66,7 +66,8 @@ def player_ship_placement():
 
 
 def player_guess_hit():
-    """places an "o" on the computer grid if the player guesses right"""
+    """places an "o" on the computer grid if the player guesses right
+    and increments the player's score by 1"""
     print(f"Player targets {guess_row}, {guess_col}")
     print("Player's attack hits")
     computer_grid[guess_row][guess_col] = "o"
@@ -92,7 +93,8 @@ def computer_guess_randomiser():
 
 
 def computer_guess_hit():
-    """ Adds an "o" to a location on the player's grid that the computer guessed right"""
+    """ Adds an "o" to a location on the player's grid that the computer guessed right
+    and increments the computer's score by 1"""
     print(f"Computer targets {comp_guess[0]}, {comp_guess[1]}")
     print("Computer's attack hits!")
     player_grid[comp_guess[0]][comp_guess[1]] = "o"
@@ -173,6 +175,13 @@ while (score["Player"] < 4) and (score["Computer"] < 4):
     
     print(score)
     display_all_grids()
+
+if score["Player"] == score["Computer"]:
+    print("Game Over, It's a draw!")
+elif score["Player"] > score["Computer"]:
+    print("Game over, you win!")
+else:
+    print("Game over, you lose!")
 
 
 
