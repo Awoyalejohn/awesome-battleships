@@ -98,7 +98,9 @@ def display_all_grids():
 display_all_grids()
 
 while (score["Player"] < 4) and (score["Computer"] < 4):
-  
-    guess_row = int(input("Guess Row: "))
-    guess_col = int(input("Guess Column: "))
+    try:
+        guess_row = int(input("Guess Row: "))
+        guess_col = int(input("Guess Column: "))
+    except ValueError:
+        print("Please type in a number!")
 
