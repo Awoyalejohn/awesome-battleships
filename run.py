@@ -65,7 +65,17 @@ def player_ship_placement():
     player_grid[player_ship_row[3]][player_ship_col[3]] = "$"
 
 
+def player_guess_hit():
+    """places an "o" on the computer grid if the player guesses right"""
+    print(f"Player chooses {guess_row}, {guess_col}")
+    print("Player's attack hits")
+    computer_grid[guess_row][guess_col] = "o"
+    score["Player"] += 1
 
+def player_guess_miss():
+    """places an "x" on the computer grid if the player guesses wrong"""
+    print("Player misses!")
+    computer_grid[guess_row][guess_col] = "x"
 
 
 
@@ -97,10 +107,17 @@ def display_all_grids():
 
 display_all_grids()
 
+#Main game Loop!
 while (score["Player"] < 4) and (score["Computer"] < 4):
     try:
         guess_row = int(input("Guess Row: "))
         guess_col = int(input("Guess Column: "))
     except ValueError:
         print("Please type in a number!")
+    
+    
+
+    
+
+
 
