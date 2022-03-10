@@ -77,7 +77,24 @@ def player_guess_miss():
     print("Player misses!")
     computer_grid[guess_row][guess_col] = "x"
 
+def computer_guess_randomiser():
+    """Creates a random tuple of a row and columnn within the range of grid size minus 1. 
+    It checks to see if the row and col index does not already have an "o" placed
+    on player grid if it does it continues to loop the randint function"""
+    while True:
+        row = randint(0, len(hidden_grid) - 1)
+        col = randint(0, len(hidden_grid) - 1)
+        if (player_grid[row][col] == "o") or (player_grid[row][col] == "x"):
+            continue
+        else:
+            return (row, col)
 
+
+def computer_guess_hit():
+    pass
+
+def computer_guess_miss():
+    pass
 
 
 def display_grid(grid):
@@ -117,7 +134,7 @@ while (score["Player"] < 4) and (score["Computer"] < 4):
 
     try:
         if ((hidden_grid[guess_row][guess_col] == "$") and
-                (not computer_board[guess_row][guess_col])):
+                (not computer_grid[guess_row][guess_col])):
             player_guess_hit()
         else:
             if (guess_row not in range(5)) or (guess_col not in range(5)):
@@ -135,6 +152,7 @@ while (score["Player"] < 4) and (score["Computer"] < 4):
                 player_guess_miss()
     except IndexError:
         print("Your guess is off-grid")
+        continue
 
 
 
