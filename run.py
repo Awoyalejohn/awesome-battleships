@@ -92,12 +92,14 @@ def computer_guess_randomiser():
 
 
 def computer_guess_hit():
+    """ Adds an "o" to a location on the player's grid that the computer guessed right"""
     print(f"Computer targets {comp_guess[0]}, {comp_guess[1]}")
     print("Computer's attack hits!")
     player_grid[comp_guess[0]][comp_guess[1]] = "o"
     score["Computer"] += 1
 
 def computer_guess_miss():
+    """ Adds an "x" to a location on the player's grid that the computer guessed wrong"""
     print(f"Computer targets {comp_guess[0]}, {comp_guess[1]}")
     print("Computer misses!")
     player_grid[comp_guess[0]][comp_guess[1]] = "x"
@@ -159,6 +161,19 @@ while (score["Player"] < 4) and (score["Computer"] < 4):
     except IndexError:
         print("Your guess is off-grid")
         continue
+
+    comp_guess = computer_guess_randomiser()
+    print(comp_guess)
+
+    if (player_grid[comp_guess[0]][comp_guess[1]] == "$"):
+        computer_guess_hit()
+    
+    else:
+        computer_guess_miss()
+    
+    print(score)
+    display_all_grids()
+
 
 
 
