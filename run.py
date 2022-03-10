@@ -16,6 +16,7 @@ class Game:
     """
 
     def __init__(self, grid):
+        """"Creates class instance attributes for grids"""
         self.grid = grid
 
     def create_grid(self):
