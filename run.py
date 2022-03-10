@@ -132,6 +132,9 @@ def computer_guess_miss():
 
 
 def display_grid(grid):
+    """Takes the grid lists as a parameter and returns
+    them as a string separated by a space without
+    square brackets or quotation marks"""
     for i in grid:
         print(" ".join(i))
 
