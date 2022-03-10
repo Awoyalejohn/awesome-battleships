@@ -13,7 +13,6 @@ class Game:
     Row: 0
     Column: 0
     """
-    size = 5
 
     def __init__(self, grid):
         self.grid = grid
@@ -42,6 +41,7 @@ class Player(Game):
     pass
 
 # Computer ship index locations
+# Creates a random list of numbers with no repeats
 computer_ship_row = sample(range(5), 4)
 computer_ship_col = sample(range(5), 4)
 print(computer_ship_row)
@@ -58,6 +58,7 @@ def computer_ship_placement():
 
 
 # Player ship index locations
+# Creates a random list of numbers with no repeats
 player_ship_row = sample(range(5), 4)
 player_ship_col = sample(range(5), 4)
 print(player_ship_row)
@@ -66,7 +67,7 @@ print(player_ship_col)
 
 def player_ship_placement():
     """ places ships on the player's grid using the first
-    4 numbers from random number list"""
+    4 numbers from random number lists"""
     player_grid[player_ship_row[0]][player_ship_col[0]] = "$"
     player_grid[player_ship_row[1]][player_ship_col[1]] = "$"
     player_grid[player_ship_row[2]][player_ship_col[2]] = "$"
@@ -126,6 +127,16 @@ def display_grid(grid):
         print(" ".join(i))
 
 print(Game.info)
+
+while True:
+    try:
+        size = int(input("Enter a grid size between 4 & 10: "))
+        if size not in range(4, 11):
+            raise ValueError
+        break
+    except ValueError:
+        print("Must be a number between 4 & 10")
+
 print(score)
 hidden_grid = Game([])
 player_grid = Player([])
@@ -188,8 +199,7 @@ while (score["Player"] < 4) and (score["Computer"] < 4):
 
     else:
         computer_guess_miss()
-        print(score)
-
+    print(score)
     display_all_grids()
 
 if score["Player"] == score["Computer"]:
