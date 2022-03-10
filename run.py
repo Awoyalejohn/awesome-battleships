@@ -10,11 +10,12 @@ class Game:
     Column: 0
     """
     size = 5
+    
     def __init__(self, grid):
         self.grid = grid
 
     def create_grid(self):
-        self.grid = [["+"] * 5 for i in range(5)]
+        return [["+"] * 5 for i in range(5)]
 
 
 #code from code instute battleship demo
@@ -24,7 +25,6 @@ class Player(Game):
     their side and ships
     """
     pass
-
 #code from code instute battleship demo
 class Computer(Game):
     """
@@ -33,12 +33,17 @@ class Computer(Game):
     """
     pass
 
-
+def display_grid(grid):
+    for i in grid:
+        print(" ".join(i))
 
 print(Game.info)
 hidden_grid = Game([])
 player_grid = Player([])
 computer_grid = Computer([])
-print(hidden_grid.create_grid())
-print(player_grid.create_grid())
-print(computer_grid.create_grid())
+hidden_grid = hidden_grid.create_grid()
+player_grid = player_grid.create_grid()
+computer_grid = computer_grid.create_grid()
+display_grid(hidden_grid)
+display_grid(player_grid)
+display_grid(computer_grid)
