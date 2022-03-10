@@ -114,24 +114,28 @@ while (score["Player"] < 4) and (score["Computer"] < 4):
         guess_col = int(input("Guess Column: "))
     except ValueError:
         print("Please type in a number!")
-    
-    if ((hidden_grid[guess_row][guess_col] == "$") and
-             (not computer_board[guess_row][guess_col])):
-        player_guess_hit()
-    else:
-        if (guess_row not in range(5)) or (guess_col not in range(5)):
-            print("You can't use negative numbers!")
-            continue
-        
-        elif (computer_grid[guess_row][guess_col] == "x"):
-            print("You guessed that one wrong already!")
-            continue
 
-        elif (computer_grid[guess_row][guess_col] == "o"):
-            print("You guessed that one correct already!")
-            continue
+    try:
+        if ((hidden_grid[guess_row][guess_col] == "$") and
+                (not computer_board[guess_row][guess_col])):
+            player_guess_hit()
         else:
-            player_guess_miss()
+            if (guess_row not in range(5)) or (guess_col not in range(5)):
+                print("You can't use negative numbers!")
+                continue
+            
+            elif (computer_grid[guess_row][guess_col] == "x"):
+                print("You guessed that one wrong already!")
+                continue
+
+            elif (computer_grid[guess_row][guess_col] == "o"):
+                print("You guessed that one correct already!")
+                continue
+            else:
+                player_guess_miss()
+    except IndexError:
+        print("Your guess is off-grid")
+
 
 
     
