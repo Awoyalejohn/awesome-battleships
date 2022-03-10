@@ -1,4 +1,11 @@
 import random
+class Game:
+    """ The game class that is reponsible for the objects that will be in the game"""
+    score = {"Player": 0, "Computer": 0}
+    grid = []
+    def __init__(self, ):
+        pass
+
 
 #code from code instute battleship demo
 class PlayerGrid:
