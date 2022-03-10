@@ -6,10 +6,11 @@ class Game:
     """ The game class that is reponsible for the objects
      that will be in the game. It be used to make grid class instances
      and is a superclass of the Computer and Player classes"""
-    info = """Welcome to Awesome Battleships!
-    Player and Computer Board size:
-    5 Number of ships: 4
-    from the top left corner
+    info = """
+    Welcome to Awesome Battleships!
+    Player and Computer Board size is up to you:
+    Number of ships for on each grid: 4
+    From the top left corner
     Row: 0
     Column: 0
     """
@@ -20,7 +21,7 @@ class Game:
     def create_grid(self):
         """ A method to make a 2d grid that is made up
          of 5 lists made up of 5 plusses in a list """
-        return [["+"] * 5 for i in range(5)]
+        return [["+"] * size for i in range(size)]
 
 
 # Code from code instute battleship demo
@@ -40,12 +41,22 @@ class Player(Game):
     """
     pass
 
+
+print(Game.info)
+
+while True:
+    try:
+        size = int(input("Enter a grid size between 4 & 10: "))
+        if size not in range(4, 11):
+            raise ValueError
+        break
+    except ValueError:
+        print("Must be a number between 4 & 10")
+
 # Computer ship index locations
 # Creates a random list of numbers with no repeats
-computer_ship_row = sample(range(5), 4)
-computer_ship_col = sample(range(5), 4)
-print(computer_ship_row)
-print(computer_ship_col)
+computer_ship_row = sample(range(size), 4)
+computer_ship_col = sample(range(size), 4)
 
 
 def computer_ship_placement():
@@ -59,10 +70,8 @@ def computer_ship_placement():
 
 # Player ship index locations
 # Creates a random list of numbers with no repeats
-player_ship_row = sample(range(5), 4)
-player_ship_col = sample(range(5), 4)
-print(player_ship_row)
-print(player_ship_col)
+player_ship_row = sample(range(size), 4)
+player_ship_col = sample(range(size), 4)
 
 
 def player_ship_placement():
@@ -126,17 +135,6 @@ def display_grid(grid):
     for i in grid:
         print(" ".join(i))
 
-print(Game.info)
-
-while True:
-    try:
-        size = int(input("Enter a grid size between 4 & 10: "))
-        if size not in range(4, 11):
-            raise ValueError
-        break
-    except ValueError:
-        print("Must be a number between 4 & 10")
-
 print(score)
 hidden_grid = Game([])
 player_grid = Player([])
@@ -151,8 +149,6 @@ player_ship_placement()
 
 def display_all_grids():
     """ Displays all the grids"""
-    print("Hidden Grid")
-    display_grid(hidden_grid)
     print("Computer Grid")
     display_grid(computer_grid)
     print("Player Grid")
@@ -166,7 +162,7 @@ while (score["Player"] < 4) and (score["Computer"] < 4):
         guess_row = int(input("Guess Row: "))
         guess_col = int(input("Guess Column: "))
     except ValueError:
-        print("Please type in a number!")
+        print("Please type in a whole number!")
         continue
 
     try:
@@ -174,7 +170,8 @@ while (score["Player"] < 4) and (score["Computer"] < 4):
                 (not computer_grid[guess_row][guess_col])):
             player_guess_hit()
         else:
-            if (guess_row not in range(5)) or (guess_col not in range(5)):
+            if ((guess_row not in range(size)) or
+                    (guess_col not in range(size))):
                 print("You can't use negative numbers!")
                 continue
 
@@ -192,7 +189,6 @@ while (score["Player"] < 4) and (score["Computer"] < 4):
         continue
 
     comp_guess = computer_guess_randomiser()
-    print(comp_guess)
 
     if (player_grid[comp_guess[0]][comp_guess[1]] == "$"):
         computer_guess_hit()
