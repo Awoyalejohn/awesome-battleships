@@ -34,17 +34,40 @@ class Player(Game):
     """
     pass
 
+#computer ship index locations
+computer_ship_row = sample(range(5), 4)
+computer_ship_col = sample(range(5), 4)
+print(computer_ship_row)
+print(computer_ship_col)
+
+def computer_ship_placement():
+    """ places ships on the computer's grid using the first
+    4 numbers from random number list"""
+    hidden_grid[computer_ship_row[0]][computer_ship_col[0]] = "$"
+    hidden_grid[computer_ship_row[1]][computer_ship_col[1]] = "$"
+    hidden_grid[computer_ship_row[2]][computer_ship_col[2]] = "$"
+    hidden_grid[computer_ship_row[3]][computer_ship_col[3]] = "$"
+
+
+
 #player ship index locations 
 player_ship_row = sample(range(5), 4)
 player_ship_col = sample(range(5), 4)
 print(player_ship_row)
 print(player_ship_col)
 
-#computer ship index locations
-computer_ship_row = sample(range(5), 4)
-computer_ship_col = sample(range(5), 4)
-print(computer_ship_row)
-print(computer_ship_col)
+def computer_ship_placement():
+    """ places ships on the player's grid using the first
+    4 numbers from random number list"""
+    player_grid[player_ship_row[0]][player_ship_col[0]] = "$"
+    player_grid[player_ship_row[1]][player_ship_col[1]] = "$"
+    player_grid[player_ship_row[2]][player_ship_col[2]] = "$"
+    player_grid[player_ship_row[3]][player_ship_col[3]] = "$"
+
+
+
+
+
 
 
 def display_grid(grid):
