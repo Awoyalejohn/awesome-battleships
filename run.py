@@ -56,7 +56,7 @@ player_ship_col = sample(range(5), 4)
 print(player_ship_row)
 print(player_ship_col)
 
-def computer_ship_placement():
+def player_ship_placement():
     """ places ships on the player's grid using the first
     4 numbers from random number list"""
     player_grid[player_ship_row[0]][player_ship_col[0]] = "$"
@@ -82,10 +82,18 @@ computer_grid = Computer([])
 hidden_grid = hidden_grid.create_grid()
 player_grid = player_grid.create_grid()
 computer_grid = computer_grid.create_grid()
-print("Hidden Grid")
-display_grid(hidden_grid)
-print("Computer Grid")
-display_grid(computer_grid)
-print("Player Grid")
-display_grid(player_grid)
+
+computer_ship_placement()
+player_ship_placement()
+
+def display_all_grids():
+    """ Displays all the grids"""
+    print("Hidden Grid")
+    display_grid(hidden_grid)
+    print("Computer Grid")
+    display_grid(computer_grid)
+    print("Player Grid")
+    display_grid(player_grid)
+
+display_all_grids()
 
