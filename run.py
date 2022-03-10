@@ -34,10 +34,17 @@ class Player(Game):
     """
     pass
 
+#player ship index locations 
 player_ship_row = sample(range(5), 4)
 player_ship_col = sample(range(5), 4)
 print(player_ship_row)
 print(player_ship_col)
+
+#computer ship index locations
+computer_ship_row = sample(range(5), 4)
+computer_ship_col = sample(range(5), 4)
+print(computer_ship_row)
+print(computer_ship_col)
 
 
 def display_grid(grid):
