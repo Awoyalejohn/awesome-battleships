@@ -67,13 +67,14 @@ def player_ship_placement():
 
 def player_guess_hit():
     """places an "o" on the computer grid if the player guesses right"""
-    print(f"Player chooses {guess_row}, {guess_col}")
+    print(f"Player targets {guess_row}, {guess_col}")
     print("Player's attack hits")
     computer_grid[guess_row][guess_col] = "o"
     score["Player"] += 1
 
 def player_guess_miss():
     """places an "x" on the computer grid if the player guesses wrong"""
+    print(f"Player targets {guess_row}, {guess_col}")
     print("Player misses!")
     computer_grid[guess_row][guess_col] = "x"
 
@@ -91,10 +92,15 @@ def computer_guess_randomiser():
 
 
 def computer_guess_hit():
-    pass
+    print(f"Computer targets {comp_guess[0]}, {comp_guess[1]}")
+    print("Computer's attack hits!")
+    player_grid[comp_guess[0]][comp_guess[1]] = "o"
+    score["Computer"] += 1
 
 def computer_guess_miss():
-    pass
+    print(f"Computer targets {comp_guess[0]}, {comp_guess[1]}")
+    print("Computer misses!")
+    player_grid[comp_guess[0]][comp_guess[1]] = "x"
 
 
 def display_grid(grid):
