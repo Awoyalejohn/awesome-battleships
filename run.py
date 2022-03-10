@@ -9,13 +9,16 @@ class Game:
     Row: 0
     Column: 0
     """
-    size = int(input())
+    size = int(input("Choose a grid size?"))
     def __init__(self, grid):
-        self.grid =grid
+        self.grid = grid
+
+    def display_info(self):
+        return self.info
 
 
 #code from code instute battleship demo
-class PlayerGrid(Game):
+class Player(Game):
     """
     Player Grid class that holds information on the player,
     their side and ships
@@ -37,7 +40,7 @@ class PlayerGrid(Game):
             print()
 
 #code from code instute battleship demo
-class ComputerGrid(Game):
+class Computer(Game):
     """
     Computer Grid class that holds information on the player,
     their side and ships
@@ -101,3 +104,8 @@ print("-" * 20)
 cgrid = ComputerGrid("Computer's Grid:", gsize, "player ships")
 print(cgrid.computer)
 cgrid.create_cgrid()
+
+print(Game.info)
+hidden_grid = Game(grid = [])
+player_grid = Player(grid = [])
+computer_grid = Computer(grid = [])
