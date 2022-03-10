@@ -141,6 +141,7 @@ while (score["Player"] < 4) and (score["Computer"] < 4):
         guess_col = int(input("Guess Column: "))
     except ValueError:
         print("Please type in a number!")
+        continue
 
     try:
         if ((hidden_grid[guess_row][guess_col] == "$") and
