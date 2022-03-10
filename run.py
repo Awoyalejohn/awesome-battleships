@@ -2,13 +2,20 @@ import random
 class Game:
     """ The game class that is reponsible for the objects that will be in the game"""
     score = {"Player": 0, "Computer": 0}
-    grid = []
-    def __init__(self, ):
-        pass
+    info = """Welcome to Awesome Battleships! 
+    Player and Computer Board size: 
+    5 Number of ships: 4
+    from the top left corner
+    Row: 0
+    Column: 0
+    """
+    size = int(input())
+    def __init__(self, grid):
+        self.grid =grid
 
 
 #code from code instute battleship demo
-class PlayerGrid:
+class PlayerGrid(Game):
     """
     Player Grid class that holds information on the player,
     their side and ships
@@ -30,7 +37,7 @@ class PlayerGrid:
             print()
 
 #code from code instute battleship demo
-class ComputerGrid:
+class ComputerGrid(Game):
     """
     Computer Grid class that holds information on the player,
     their side and ships
