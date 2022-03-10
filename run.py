@@ -1,44 +1,52 @@
 from random import randint, sample
 score = {"Player": 0, "Computer": 0}
+
+
 class Game:
-    """ The game class that is reponsible for the objects that will be in the game"""
-    info = """Welcome to Awesome Battleships! 
-    Player and Computer Board size: 
+    """ The game class that is reponsible for the objects
+     that will be in the game. It be used to make grid class instances
+     and is a superclass of the Computer and Player classes"""
+    info = """Welcome to Awesome Battleships!
+    Player and Computer Board size:
     5 Number of ships: 4
     from the top left corner
     Row: 0
     Column: 0
     """
     size = 5
-    
+
     def __init__(self, grid):
         self.grid = grid
 
     def create_grid(self):
+        """ A method to make a 2d grid that is made up
+         of 5 lists made up of 5 plusses in a list """
         return [["+"] * 5 for i in range(5)]
 
 
-#code from code instute battleship demo
+# Code from code instute battleship demo
 class Computer(Game):
     """
-    Computer Grid class that holds information on the player,
-    their side and ships
+    Computer class that is a subclass of the Game class.
+    It will be used to make class instances for the computer grid
     """
     pass
 
-#code from code instute battleship demo
+
+# Code from code instute battleship demo
 class Player(Game):
     """
-    Player Grid class that holds information on the player,
-    their side and ships
+    Player class that is a subclass of the Game class.
+    It will be used to make class instances for the player grid
     """
     pass
 
-#computer ship index locations
+# Computer ship index locations
 computer_ship_row = sample(range(5), 4)
 computer_ship_col = sample(range(5), 4)
 print(computer_ship_row)
 print(computer_ship_col)
+
 
 def computer_ship_placement():
     """ places ships on the computer's grid using the first
@@ -49,12 +57,12 @@ def computer_ship_placement():
     hidden_grid[computer_ship_row[3]][computer_ship_col[3]] = "$"
 
 
-
-#player ship index locations 
+# Player ship index locations
 player_ship_row = sample(range(5), 4)
 player_ship_col = sample(range(5), 4)
 print(player_ship_row)
 print(player_ship_col)
+
 
 def player_ship_placement():
     """ places ships on the player's grid using the first
@@ -73,15 +81,18 @@ def player_guess_hit():
     computer_grid[guess_row][guess_col] = "o"
     score["Player"] += 1
 
+
 def player_guess_miss():
     """places an "x" on the computer grid if the player guesses wrong"""
     print(f"Player targets {guess_row}, {guess_col}")
     print("Player misses!")
     computer_grid[guess_row][guess_col] = "x"
 
+
 def computer_guess_randomiser():
-    """Creates a random tuple of a row and columnn within the range of grid size minus 1. 
-    It checks to see if the row and col index does not already have an "o" placed
+    """Creates a random tuple of a row and columnn within
+    the range of grid size minus 1. It checks to see if
+    the row and col index does not already have an "o" placed
     on player grid if it does it continues to loop the randint function"""
     while True:
         row = randint(0, len(hidden_grid) - 1)
@@ -93,15 +104,18 @@ def computer_guess_randomiser():
 
 
 def computer_guess_hit():
-    """ Adds an "o" to a location on the player's grid that the computer guessed right
-    and increments the computer's score by 1"""
+    """ Adds an "o" to a location on the player's grid
+    that the computer guessed rightand increments the
+    computer's score by 1"""
     print(f"Computer targets {comp_guess[0]}, {comp_guess[1]}")
     print("Computer's attack hits!")
     player_grid[comp_guess[0]][comp_guess[1]] = "o"
     score["Computer"] += 1
 
+
 def computer_guess_miss():
-    """ Adds an "x" to a location on the player's grid that the computer guessed wrong"""
+    """ Adds an "x" to a location on the player's grid
+    that the computer guessed wrong"""
     print(f"Computer targets {comp_guess[0]}, {comp_guess[1]}")
     print("Computer misses!")
     player_grid[comp_guess[0]][comp_guess[1]] = "x"
@@ -123,6 +137,7 @@ computer_grid = computer_grid.create_grid()
 computer_ship_placement()
 player_ship_placement()
 
+
 def display_all_grids():
     """ Displays all the grids"""
     print("Hidden Grid")
@@ -134,7 +149,7 @@ def display_all_grids():
 
 display_all_grids()
 
-#Main game Loop!
+# Main game Loop!
 while (score["Player"] < 4) and (score["Computer"] < 4):
     try:
         guess_row = int(input("Guess Row: "))
@@ -151,7 +166,7 @@ while (score["Player"] < 4) and (score["Computer"] < 4):
             if (guess_row not in range(5)) or (guess_col not in range(5)):
                 print("You can't use negative numbers!")
                 continue
-            
+
             elif (computer_grid[guess_row][guess_col] == "x"):
                 print("You guessed that one wrong already!")
                 continue
@@ -170,11 +185,11 @@ while (score["Player"] < 4) and (score["Computer"] < 4):
 
     if (player_grid[comp_guess[0]][comp_guess[1]] == "$"):
         computer_guess_hit()
-    
+
     else:
         computer_guess_miss()
-    
-    print(score)
+        print(score)
+
     display_all_grids()
 
 if score["Player"] == score["Computer"]:
@@ -183,11 +198,3 @@ elif score["Player"] > score["Computer"]:
     print("Game over, you win!")
 else:
     print("Game over, you lose!")
-
-
-
-
-    
-
-
-
