@@ -18,7 +18,7 @@ When they make a correct guess, it is indicated by an "o," and when they make a 
   - The grid size can be set at the start of the game
   - The choice is between 4 and 10
   - The player grid and computer grid will be sized the same
-  - Warns player if their choce is not between 4 and 10
+  - Warns player if their choice is not between 4 and 10
 add image here*
 
 - Random grid generation
@@ -27,11 +27,17 @@ add image here*
   - Computer's ships are not visible to the player
 add image here*
 
+- turn based gameplay
+  - Computer can makes guesses after player's guess
+  - Score is revealed every turn
+  - Player is prompted to give their guess on each turn
+add image here*
+
 - Input validation and error-checking
   - Player is unable to enter coordinates that are outside the grid size. 
   - Player can only input numbers for guesses
   - Player is unable to make the same gueess twice
-  add image here*
+add image here*
 
 ### Future Features
 - Larger ships that can take up more points on the grid
