@@ -19,24 +19,28 @@ When they make a correct guess, it is indicated by an "o," and when they make a 
   - The choice is between 4 and 10
   - The player grid and computer grid will be sized the same
   - Warns player if their choice is not between 4 and 10
+
 ![Grid size set img](https://github.com/Awoyalejohn/awesome-battleships/blob/main/assets/images/grid-size-set.PNG)
 
 - Random grid generation
   - Ships are placed randomly on the player and computer grids
   - Player's ships are denoted with a dollar sign ($)
   - Computer's ships are not visible to the player
+
 ![Random grid generation img](https://github.com/Awoyalejohn/awesome-battleships/blob/main/assets/images/random-grid-generation.PNG)
 
 - turn based gameplay
   - Computer can makes guesses after player's guess
   - Score is revealed every turn
   - Player is prompted to give their guess on each turn
+
 ![turn based gameplay img](https://github.com/Awoyalejohn/awesome-battleships/blob/main/assets/images/turn-based-gameplay.PNG)
 
 - Input validation and error-checking
   - Player is unable to enter coordinates that are outside the grid size. 
   - Player can only input numbers for guesses
   - Player is unable to make the same gueess twice
+
 ![Input validation and error-checking img](https://github.com/Awoyalejohn/awesome-battleships/blob/main/assets/images/input-validarion-and-error-checking.PNG)
 
 ### Future Features
