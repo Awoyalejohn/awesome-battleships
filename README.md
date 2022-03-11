@@ -9,7 +9,7 @@ add mockup image here*
 
 ## How To Play
 The player will be prompted to enter a grid size for their own and the computer's grids when the game begins. They can only choose between 4 and 10. Then the player and computer's ships are placed on the grid, but only the player's ships are visible to them, while the computer's remain hidden. The player's ships are indicated with a dollar sign ($).
-When they make a correct guess, it is indicated by an "o," and when they make a wrong guess, it is marked by a "x" on the computer's grid. The winner is the one who destroys all of the opponent's ships. It is possible for the game to end in a draw if all ships are cleared in the same round.
+When they make a correct guess, it is indicated by an 'o', and when they make a wrong guess, it is marked by a 'x' on the computer's grid. Other points on the grids are made up of plus symbols (+). The winner is the one who destroys all of their opponent's ships. It is possible for the game to end in a draw if all ships are cleared in the same round.
 
 ## Features
 
@@ -24,7 +24,7 @@ When they make a correct guess, it is indicated by an "o," and when they make a 
 
 - Random grid generation
   - Ships are placed randomly on the player and computer grids
-  - Player's ships are denoted with a dollar sign ($)
+  - Player's ships are denoted with a dollar sign '$'
   - Computer's ships are not visible to the player
 
 ![Random grid generation img](https://github.com/Awoyalejohn/awesome-battleships/blob/main/assets/images/random-grid-generation.PNG)
@@ -49,6 +49,9 @@ When they make a correct guess, it is indicated by an "o," and when they make a 
 - More ships for larger grids size options
 - Special ships that reward more points when destroyed
 
+## Data Model
+For the battleship game project I went with a funcional programming data model. I use 3 classes, the Game class, Player classs, and Computer class to set up the game. I then make 3 grid class intances from them. Whick I used with functions to display the grids how I want to them to be displayed. I also used functions that add ships to the grids and calculate the guesses to return the results to the grid and score the player and computer based on the results.
+
 ## Testing
 I tested that the game works through a variety of methods:
 - I used the pep8 linter and confirmed there are no problems
@@ -72,7 +75,7 @@ I tested that the game works through a variety of methods:
 No unfixed bugs
 
 ## Deployment
-- This project was deploued on Heroku
+- This project was deployed on Heroku
   - Clone the repository
   - Create a new Heroku app
   - Set the buildbacks to python and NodeJS in that order
@@ -81,8 +84,10 @@ No unfixed bugs
 
 The live link can be found here -...
 
-### Credits
-- The code used to add randoms numbers within [range.](https://www.programiz.com/python-programming/examples/random-number)
+## Credits
+
+### Content
+- The code used to add random numbers within [range.](https://www.programiz.com/python-programming/examples/random-number)
 
 - The code used to add random numbers in a list with no duplicates using the random sample [function.](https://stackoverflow.com/questions/9755538/how-do-i-create-a-list-of-random-numbers-without-duplicates)
 
