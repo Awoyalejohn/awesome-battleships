@@ -18,8 +18,31 @@ When they make a correct guess, it is indicated by an "o," and when they make a 
   - The grid size can be set at the start of the game
   - The choice is between 4 and 10
   - The player grid and computer grid will be sized the same
+  - Warns player if their choce is not between 4 and 10
+add image here*
 
 - Random grid generation
   - Ships are placed randomly on the player and computer grids
   - Player's ships are denoted with a dollar sign ($)
   - Computer's ships are not visible to the player
+add image here*
+
+- Input validation and error-checking
+  - Player is unable to enter coordinates that are outside the grid size. 
+  - Player can only input numbers for guesses
+  - Player is unable to make the same gueess twice
+  add image here*
+
+## Testing
+I tested that the game works through a variety of methods:
+- I used the pep8 linter and confirmed there are no problems
+- I inputed random letters when prompted for number inputs
+- I input coordinates that were out of range
+- I typed in negative numbers
+- I also used duplicate guesses
+
+
+
+
+
+
