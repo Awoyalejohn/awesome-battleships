@@ -3,9 +3,9 @@ Awesome Battleships is a python game that runs on a mock command line terminal o
 You and the computer battle to sink each other's ships, which are distributed across a grid.
 Each ship occupies a single point on the grid.
 
-The live link can be found here - ...
+The live link can be found here - https://awesome-battleships.herokuapp.com/
 
-add mockup image here*
+[mockup](https://github.com/Awoyalejohn/awesome-battleships/blob/main/assets/images/mockup.PNG)
 
 ## How To Play
 The player will be prompted to enter a grid size for their own and the computer's grids when the game begins. They can only choose between 4 and 10. Then the player and computer's ships are placed on the grid, but only the player's ships are visible to them, while the computer's remain hidden. The player's ships are indicated with a dollar sign ($).
@@ -82,7 +82,7 @@ No unfixed bugs
   - Link the Heroku app to the repository
   - Click on Deploy
 
-The live link can be found here -...
+The live link can be found here - https://awesome-battleships.herokuapp.com/
 
 ## Credits
 
