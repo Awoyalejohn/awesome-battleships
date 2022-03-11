@@ -33,6 +33,12 @@ add image here*
   - Player is unable to make the same gueess twice
   add image here*
 
+### Future Features
+- Larger ships that can take up more points on the grid
+- Option to change ship axis
+- More ships for larger grids size options
+- Special ships that reward more points when destroyed
+
 ## Testing
 I tested that the game works through a variety of methods:
 - I used the pep8 linter and confirmed there are no problems
