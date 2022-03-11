@@ -62,5 +62,19 @@ No unfixed bugs
   - Link the Heroku app to the repository
   - Click on Deploy
 
+The live link can be found here -...
+
+### Credits
+- The code used to add randoms numbers within [range.](https://www.programiz.com/python-programming/examples/random-number)
+
+- The code used to add random numbers in a list with no duplicates using the random sample [function.](https://stackoverflow.com/questions/9755538/how-do-i-create-a-list-of-random-numbers-without-duplicates)
+
+- Code used to return multiple values from a [function.](https://stackoverflow.com/questions/354883/best-way-to-return-multiple-values-from-a-function)
+
+- Code and project used to help understand battleship games [logic.](https://www.codecademy.com/courses/learn-python/lessons/battleship/exercises/welcome-to-battleship)
+
+- Code used make input validation [prompts.](https://stackoverflow.com/questions/41832613/python-input-validation-how-to-limit-user-input-to-a-specific-range-of-integers)
+
+
 
 
