@@ -9,11 +9,11 @@ add mockup image here*
 
 ## How To Play
 The player will be prompted to enter a grid size for their own and the computer's grids when the game begins. They can only choose between 4 and 10. Then the player and computer's ships are placed on the grid, but only the player's ships are visible to them, while the computer's remain hidden. The player's ships are indicated with a dollar sign ($).
-When they make a correct guess, it is indicated by an 'o', and when they make a wrong guess, it is marked by a 'x' on the computer's grid. Other points on the grids are made up of plus symbols (+). The winner is the one who destroys all of their opponent's ships. It is possible for the game to end in a draw if all ships are cleared in the same round.
+When they make a correct guess, it is indicated by an 'o', and when they make a wrong guess, it is marked by a 'x' on the computer's grid. The other points on the grids are made up of plus symbols (+). The winner is the one who destroys all of their opponent's ships. It is possible for the game to end in a draw if all ships are cleared in the same round.
 
 ## Features
 
-## Existing Features
+### Existing Features
 - Grid size set
   - The grid size can be set at the start of the game
   - The choice is between 4 and 10
@@ -67,7 +67,7 @@ I tested that the game works through a variety of methods:
 
 - I had originally used the random randint function to pick a random row and colums to place the ships on, but it would repeat iself sometimes and place ships in the same location. I fixed this by using the random sample funcion instead. Which creates a random list with no duplicates that I used to index the location of the ships to be placed.
 
-## Validator Tesring
+## Validator Testing
 - PEP8
   - No errors were returned from [pep8online validator.](pep8online.com)
 
