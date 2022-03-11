@@ -5,7 +5,7 @@ Each ship occupies a single point on the grid.
 
 The live link can be found here - https://awesome-battleships.herokuapp.com/
 
-[mockup](https://github.com/Awoyalejohn/awesome-battleships/blob/main/assets/images/mockup.PNG)
+![mockup](https://github.com/Awoyalejohn/awesome-battleships/blob/main/assets/images/mockup.PNG)
 
 ## How To Play
 The player will be prompted to enter a grid size for their own and the computer's grids when the game begins. They can only choose between 4 and 10. Then the player and computer's ships are placed on the grid, but only the player's ships are visible to them, while the computer's remain hidden. The player's ships are indicated with a dollar sign ($).
