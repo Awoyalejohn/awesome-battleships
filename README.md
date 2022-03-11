@@ -50,7 +50,7 @@ When they make a correct guess, it is indicated by an 'o', and when they make a 
 - Special ships that reward more points when destroyed
 
 ## Data Model
-For the battleship game project I went with a funcional programming data model. I use 3 classes, the Game class, Player classs, and Computer class to set up the game. I then make 3 grid class intances from them. Whick I used with functions to display the grids how I want to them to be displayed. I also used functions that add ships to the grids and calculate the guesses to return the results to the grid and score the player and computer based on the results.
+For the battleship game project I went with a functional programming data model. I use 3 classes for the Game class, Player classs, and Computer class to set up the game. I then make 3 grid class intances from them. Which I used with functions to display the grids how I want to them to be displayed. I also used functions that add ships to the grids and calculate the guesses to return the results to the grid and score the player and computer based on the results.
 
 ## Testing
 I tested that the game works through a variety of methods:
