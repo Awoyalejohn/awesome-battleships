@@ -45,11 +45,12 @@ I tested that the game works through a variety of methods:
 
 ### Solved bugs
 - I had issues with my try exceptions not picking up on value error exceptions when I was testing the game. It turns out I had not indented my code correctly by having both spaces and tabs mixed in. I fixed it by deleting all the white space and only indendting with 4 spaces.
+
 - I had originally used the random randint function to pick a random row and colums to place the ships on, but it would repeat iself sometimes and place ships in the same location. I fixed this by using the random sample funcion instead. Which creates a random list with no duplicates that I used to index the location of the ships to be placed.
 
 ## Validator Tesring
 - PEP8
-  - No errors were retuened from pep8onlinr validator
+  - No errors were returned from [pep8online validator.](pep8online.com)
 
 ### Unfixed Bugs
 No unfixed bugs
@@ -71,7 +72,7 @@ The live link can be found here -...
 
 - Code used to return multiple values from a [function.](https://stackoverflow.com/questions/354883/best-way-to-return-multiple-values-from-a-function)
 
-- Code and project used to help understand battleship games [logic.](https://www.codecademy.com/courses/learn-python/lessons/battleship/exercises/welcome-to-battleship)
+- Code and project used to help understand battleship game's [logic.](https://www.codecademy.com/courses/learn-python/lessons/battleship/exercises/welcome-to-battleship)
 
 - Code used make input validation [prompts.](https://stackoverflow.com/questions/41832613/python-input-validation-how-to-limit-user-input-to-a-specific-range-of-integers)
 

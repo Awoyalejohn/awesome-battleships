@@ -171,7 +171,7 @@ while (score["Player"] < 4) and (score["Computer"] < 4):
 
     try:
         if ((hidden_grid[guess_row][guess_col] == "$") and
-                (not computer_grid[guess_row][guess_col])):
+                (not computer_grid[guess_row][guess_col] == "o")):
             player_guess_hit()
         else:
             if ((guess_row not in range(size)) or
