@@ -47,6 +47,20 @@ I tested that the game works through a variety of methods:
 - I had issues with my try exceptions not picking up on value error exceptions when I was testing the game. It turns out I had not indented my code correctly by having both spaces and tabs mixed in. I fixed it by deleting all the white space and only indendting with 4 spaces.
 - I had originally used the random randint function to pick a random row and colums to place the ships on, but it would repeat iself sometimes and place ships in the same location. I fixed this by using the random sample funcion instead. Which creates a random list with no duplicates that I used to index the location of the ships to be placed.
 
+## Validator Tesring
+- PEP8
+  - No errors were retuened from pep8onlinr validator
+
+### Unfixed Bugs
+No unfixed bugs
+
+## Deployment
+- This project was deploued on Heroku
+  - Clone the repository
+  - Create a new Heroku app
+  - Set the buildbacks to python and NodeJS in that order
+  - Link the Heroku app to the repository
+  - Click on Deploy
 
 
 
